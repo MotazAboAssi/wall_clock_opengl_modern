@@ -85,7 +85,7 @@ int main()
 
 	while (!glfwWindowShouldClose(window))
 	{
-		GLfloat seconds_clock = -(float)glfwGetTime() / (9.6f * 2);
+		GLfloat seconds_clock = -(float)glfwGetTime()/9.6f ;
 		GLfloat seconds_cylinder = -(float)glfwGetTime() / 9.6f * 30.0f;
 		processInput(window);
 
@@ -115,7 +115,6 @@ int main()
 		cylinder.rotation(-(float)(cos(seconds_cylinder) / 3), vec3(0.0f, 0.0f, 1.0f));
 		cylinder.translation(vec3(0, -0.15, 0.01));
 		cylinder.rotation(M_PI*0.5, vec3(1.0f, 0.0f, 0.0f));
-		
 		cylinder.scalation(vec3(0.01, 0.01, 1));
 		cylinder.draw(ourShader);
 		// line.transformation(transformation);
