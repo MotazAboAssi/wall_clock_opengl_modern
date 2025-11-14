@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\redmn\\downloads\\ogl\\lecture3\\opengl.sharedmodule\\src\\abstraction\\drawer.ixx",
+        "ProvidedModule": "Drawer",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "OpenGlShape",
+                "BMI": "C:\\Users\\redmn\\Downloads\\OGL\\Lecture3\\OpenGL.SharedModule\\x64\\Debug\\Temp\\OpenGlShape.ixx.ifc"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}
