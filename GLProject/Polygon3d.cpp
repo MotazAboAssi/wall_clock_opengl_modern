@@ -9,17 +9,7 @@
 
 using namespace std;
 using namespace glm;
-void toString(vector<vec3> vertices)
-{
-	cout << "*********************\n";
-	for (int i = 0; i < vertices.size(); i++)
-	{
-		cout << "(" << vertices.at(i).x << "," << vertices.at(i).y << "," << vertices.at(i).z << ")\n";
-	}
-	cout << "*********************\n";
-}
 
-float a = 0.5;
 class Polygon3d
 {
 
@@ -30,15 +20,10 @@ public:
 		vector<vec3> back_face = {};
 		for (int i = 0; i < front_face.size(); i++)
 		{
-			back_face.push_back(vec3(front_face.at(i).x, front_face.at(i).y, front_face.at(i).z + a));
+			back_face.push_back(vec3(front_face.at(i).x, front_face.at(i).y, front_face.at(i).z + 0.5));
 		}
-
 		vector_polygon.push_back(Polygon2d(front_face, color));
 		vector_polygon.push_back(Polygon2d(back_face, color));
-
-		// std::cout << "front :" <<  front_face.size() << std::endl;
-		// toString(front_face);
-		// std::cout << "back: "<< back_face.size() << std::endl;
 		for (int i = 0; i < front_face.size() - 1; i++)
 		{
 			vector<vec3> v = {};
@@ -46,8 +31,6 @@ public:
 			v.push_back(back_face.at(i));
 			v.push_back(back_face.at(i + 1));
 			v.push_back(front_face.at(i + 1));
-			// std::cout << "face "<< i << ": "<< back_face.size() << std::endl;
-			// toString(v);
 			vector_polygon.push_back(Polygon2d(v, vec3(0.5f+(i*0.01), 1.0f - (i * 0.01), 0.0f)));
 		}
 		vector<vec3> v = {};
@@ -56,10 +39,9 @@ public:
 		v.push_back(back_face.at(0));
 		v.push_back(front_face.at(0));
 		vector_polygon.push_back(Polygon2d(v, vec3(2, 0.0f, 1.0f)));
-		// v.();
 	}
 
-	void transformation(mat4 t)
+	void set_matrix_model(mat4 t)
 	{
 		for (int i = 0; i < vector_polygon.size(); i++)
 		{
@@ -98,6 +80,5 @@ public:
 
 private:
 	vector<Polygon2d> vector_polygon;
-	// GLuint VAO;
 	Polygon3d();
 };
