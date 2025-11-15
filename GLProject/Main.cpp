@@ -90,7 +90,7 @@ int main()
 		//
 		cylinder.set_matrix_model(transformation);
 		cylinder.rotation(-(float)(cos(seconds_cylinder) / 3), vec3(0.0f, 0.0f, 1.0f));
-		cylinder.translation(vec3(0, -a_line * 11.0f, -0.01));
+		cylinder.translation(vec3(0, -0.55f, -0.01));
 		cylinder.scalation(vec3(0.16, 0.16, 0.08));
 		cylinder.draw(ourShader);
 		//
